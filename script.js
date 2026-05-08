@@ -30,3 +30,9 @@ function cp(x1, y1, x2, y2, xm, ym, xM, yM) {
   }
   return { x1, y1, x2, y2, ok };
 }
+const cs = [
+  {p:[10,5,10,90]}, {p:[50,50,400,300]}, 
+  {p:[0,150,500,150]}, {p:[200,0,200,400]}, {p:[350,20,450,100]}
+];
+
+function nv(n) { e = Math.max(0, Math.min(4, n)); rd(); }
