@@ -1,33 +1,31 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Taller 3-1: Cohen-Sutherland</title>
-    <style>
-        body { font-family: sans-serif; display: flex; flex-direction: column; align-items: center; background-color: #f0f2f5; }
-        #canvas-container { background: white; border: 1px solid #ccc; margin-top: 20px; }
-    </style>
+  <style>
+    body { display: flex; font: 14px Arial; gap: 20px; padding: 20px; background: #f4f4f4; }
+    .c { text-align: center; background: white; padding: 15px; border-radius: 8px; }
+    canvas { border: 1px solid #999; display: block; }
+    .p { width: 200px; padding: 10px; }
+    input { width: 50px; margin-bottom: 8px; }
+    button { cursor: pointer; background: #777; color: #fff; border: none; padding: 6px 12px; border-radius: 4px; }
+    #i { margin-top: 15px; border-top: 1px solid #ddd; padding-top: 10px; }
+  </style>
 </head>
 <body>
-    <h1>Recorte de Líneas (Cohen-Sutherland)</h1>
-    <div id="canvas-container">
-        <canvas id="canvas" width="600" height="400"></canvas>
+  <div class="c">
+    <canvas id="cv" width="450" height="350"></canvas>
+    <div style="margin-top:10px">
+      <button onclick="nv(0)">|<</button> <button onclick="nv(e-1)"><</button>
+      <button onclick="nv(e+1)">></button> <button onclick="nv(4)">>|</button>
     </div>
-    <script src="script.js"></script>
+  </div>
+  <div class="p">
+    <h3>Ventana de recorte</h3>
+    x1 <input id="x1" value="50"> y1 <input id="y1" value="50"><br>
+    x2 <input id="x2" value="400"> y2 <input id="y2" value="300"><br>
+    <button onclick="rd()" style="width:100%; border-radius:20px; background: #555;">Actualizar</button>
+    <div id="i"></div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
-<div class="controls">
-        <div class="window-inputs">
-            <h3>Ventana de recorte</h3>
-            X1: <input type="number" id="winX1" value="100" size="4">
-            Y1: <input type="number" id="winY1" value="100" size="4">
-            X2: <input type="number" id="winX2" value="500" size="4">
-            Y2: <input type="number" id="winY2" value="300" size="4">
-            <button id="btnUpdate">Actualizar</button>
-        </div>
-        <div class="nav-buttons">
-            <button id="btnPrev"> |< </button>
-            <button id="btnNext"> >| </button>
-        </div>
-        <div id="info"></div>
-    </div>
