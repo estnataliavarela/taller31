@@ -52,3 +52,5 @@ function rd() {
   document.getElementById('i').innerHTML = `<b>Línea:</b><br>p1:(${p[0]},${p[1]}) p2:(${p[2]},${p[3]})<br><b>Recorte:</b><br>pc1:(${Math.round(r.x1)},${Math.round(r.y1)})<br>pc2:(${Math.round(r.x2)},${Math.round(r.y2)})`;
 }
 rd();
+ctx.fillStyle = 'black'; ctx.fillText('(0,0)', 5, 290);
+  ctx.fillText('x1,y1', xm, ym-5); ctx.fillText('x2,y2', xM, yM+15);
