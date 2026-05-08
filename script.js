@@ -36,3 +36,19 @@ const cs = [
 ];
 
 function nv(n) { e = Math.max(0, Math.min(4, n)); rd(); }
+function rd() {
+  ctx.clearRect(0, 0, 400, 300);
+  const [xm, ym, xM, yM] = ['x1','y1','x2','y2'].map(id => +document.getElementById(id).value);
+  
+  // Dibujar Ventana
+  [[xm,ym,xM,ym],[xM,ym,xM,yM],[xM,yM,xm,yM],[xm,yM,xm,ym]].forEach(b => dr(...b, 'blue', 2));
+
+  const {p} = cs[e];
+  dr(...p, '#eee'); // Original
+
+  const r = cp(...p, xm, ym, xM, yM);
+  if (r.ok) dr(r.x1, r.y1, r.x2, r.y2, 'red', 2);
+
+  document.getElementById('i').innerHTML = `<b>Línea:</b><br>p1:(${p[0]},${p[1]}) p2:(${p[2]},${p[3]})<br><b>Recorte:</b><br>pc1:(${Math.round(r.x1)},${Math.round(r.y1)})<br>pc2:(${Math.round(r.x2)},${Math.round(r.y2)})`;
+}
+rd();
